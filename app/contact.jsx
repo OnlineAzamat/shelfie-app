@@ -1,6 +1,8 @@
 import { Link } from 'expo-router'
-import { StyleSheet, Text, useColorScheme, View } from 'react-native'
+import { StyleSheet, useColorScheme } from 'react-native'
 import { Colors } from '../constants/Colors';
+import ThemedView from '../components/ThemedView';
+import ThemedText from '../components/ThemedText';
 
 export default function Contact() {
   const scheme = useColorScheme();
@@ -8,11 +10,15 @@ export default function Contact() {
   const theme = Colors[scheme] ?? Colors.light;
 
   return (
-    <View style={styles.container}>
-      <Text style={[ styles.title, { color: theme.text } ]}>Contact Page</Text>
+    <ThemedView style={styles.container}>
+      <ThemedText style={[ styles.title, { color: theme.text } ]}>Contact Page</ThemedText>
 
-      <Link href="/" style={styles.link}>Back Home</Link>
-    </View>
+      <Link href="/" style={[ styles.link, { borderBottomColor: theme.text } ]}>
+        <ThemedText>
+          Back Home
+        </ThemedText>
+      </Link>
+    </ThemedView>
   )
 }
 

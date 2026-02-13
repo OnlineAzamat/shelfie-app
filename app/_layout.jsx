@@ -13,7 +13,7 @@ const RootLayout = () => {
       <StatusBar value="auto" />
       <Stack screenOptions={{
         headerStyle: { backgroundColor: theme.navBackground },
-        headerTintColor: "#333"
+        headerTintColor: theme.title
       }}>
         <Stack.Screen name='index' options={{ title: "Home" }} />
         <Stack.Screen name='about' options={{ title: "About", headerShown: false }} />
